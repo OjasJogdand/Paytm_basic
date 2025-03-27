@@ -5,12 +5,12 @@ import cors from "cors";
 import accountrouter from "./routes/accounts.js";
 
 const app=express();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //app.use("/api/v1",router);
 app.use("/api/v1/user",userRouter);
 app.use("/api/v1/account",accountrouter);
-app.use(cors());
 app.listen("3000",function(){
     console.log("listening on port 3000");
 });
